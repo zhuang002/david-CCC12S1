@@ -6,16 +6,20 @@ public class Main {
 		Scanner sc = new Scanner(System.in);
 		int forth = sc.nextInt();
 		
-		int count = 0;
-		for (int i=1;i<forth;i++) {
-			for (int j=i+1;j<forth;j++) {
-				for (int k=j+1;k<forth;k++) {
-					count++;
-				}
-			}
-		}
-		System.out.println(count);
+		System.out.println(combination(3,forth-1));
 
+	}
+
+	private static int combination(int m, int n) {
+		int result = 1;
+		for (int i=0;i<m;i++) {
+			result *=(n-i);
+		}
+		
+		for (int i=1;i<=m;i++) {
+			result /= i;
+		} 
+		return result;
 	}
 
 }
